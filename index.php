@@ -408,7 +408,7 @@ function base64_url_decode($input) {
   return base64_decode(strtr($input, '-_', '+/'));
 }
 
-$data = parse_signed_request($_REQUEST['signed_request'], AppInfo::appID());
+$data = parse_signed_request($_REQUEST['signed_request'], AppInfo::appSecret(); ?>');
 
 ?>
 
