@@ -401,6 +401,7 @@ function parse_signed_request($signed_request, $secret) {
     return null;
   }
 
+	echo $data;
   return $data;
 }
 
@@ -408,13 +409,18 @@ function base64_url_decode($input) {
   return base64_decode(strtr($input, '-_', '+/'));
 }
 
+<<<<<<< HEAD
 $data = parse_signed_request($_REQUEST['signed_request'], AppInfo::appSecret(); ?>');
+=======
+$data = parse_signed_request($_REQUEST['signed_request'], AppInfo::appSecret());
+>>>>>>> parent of fcaeb53... addition des pages fans/non-fans
 
 ?>
 
 <?php
 if(!$data['page']['liked']){
 	include ('tabnon.php');
+	
 	// contenu pour les NON FAN
 }else{
 include ('taboui.php');
